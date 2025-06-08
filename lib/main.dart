@@ -26,6 +26,22 @@ class _MyAppState extends State<MyApp> {
           brightness: Brightness.light,
         ),
         useMaterial3: true,
+        textTheme: TextTheme(
+          headlineLarge: TextStyle(
+            fontSize: 32,
+            fontWeight: FontWeight.bold,
+            color: Colors.black,
+          ),
+          titleMedium: TextStyle(
+            fontSize: 18,
+            fontWeight: FontWeight.w600,
+            color: Colors.teal[800],
+          ),
+        ),
+        appBarTheme: AppBarTheme(
+          backgroundColor: Colors.teal[50],
+          elevation: 0,
+        ),
       ),
       darkTheme: ThemeData(
         colorScheme: ColorScheme.fromSeed(
@@ -33,6 +49,22 @@ class _MyAppState extends State<MyApp> {
           brightness: Brightness.dark,
         ),
         useMaterial3: true,
+        textTheme: TextTheme(
+          headlineLarge: TextStyle(
+            fontSize: 32,
+            fontWeight: FontWeight.bold,
+            color: Colors.white,
+          ),
+          titleMedium: TextStyle(
+            fontSize: 18,
+            fontWeight: FontWeight.w600,
+            color: Colors.teal[200],
+          ),
+        ),
+        appBarTheme: AppBarTheme(
+          backgroundColor: Colors.grey[900],
+          elevation: 0,
+        ),
       ),
       themeMode: _themeMode,
       home: HomeScreen(onThemeChanged: _toggleTheme),
@@ -66,34 +98,47 @@ class _HomeScreenState extends State<HomeScreen> {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text('Icon Picker & Theme Toggle'),
+        title: Text(
+          'Icon Picker & Theme Toggle',
+          style: Theme.of(context).textTheme.headlineLarge,
+        ),
       ),
       body: Padding(
         padding: const EdgeInsets.all(24.0),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            DropdownButton<IconData>(
-              value: _selectedIcon,
-              onChanged: (IconData? newIcon) {
-                if (newIcon != null) {
-                  setState(() {
-                    _selectedIcon = newIcon;
-                  });
-                }
-              },
-              items: iconOptions.entries.map((entry) {
-                return DropdownMenuItem<IconData>(
-                  value: entry.value,
-                  child: Row(
-                    children: [
-                      Icon(entry.value),
-                      SizedBox(width: 8),
-                      Text(entry.key),
-                    ],
-                  ),
-                );
-              }).toList(),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(
+                  'Pick an Icon:',
+                  style: Theme.of(context).textTheme.titleMedium,
+                ),
+                SizedBox(height: 10),
+                DropdownButton<IconData>(
+                  value: _selectedIcon,
+                  onChanged: (IconData? newIcon) {
+                    if (newIcon != null) {
+                      setState(() {
+                        _selectedIcon = newIcon;
+                      });
+                    }
+                  },
+                  items: iconOptions.entries.map((entry) {
+                    return DropdownMenuItem<IconData>(
+                      value: entry.value,
+                      child: Row(
+                        children: [
+                          Icon(entry.value),
+                          SizedBox(width: 8),
+                          Text(entry.key),
+                        ],
+                      ),
+                    );
+                  }).toList(),
+                ),
+              ],
             ),
             SizedBox(height: 40),
             Icon(
@@ -105,7 +150,10 @@ class _HomeScreenState extends State<HomeScreen> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text('Dark Mode'),
+                Text(
+                  'Dark Mode',
+                  style: Theme.of(context).textTheme.titleMedium,
+                ),
                 Switch(
                   value: isDark,
                   onChanged: widget.onThemeChanged,
