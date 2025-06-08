@@ -16,7 +16,7 @@ class AppTheme {
       titleMedium: TextStyle(
         fontSize: 18,
         fontWeight: FontWeight.w600,
-        color: Colors.teal.shade800, // ✅ safer & cleaner
+        color: Colors.teal.shade800, //
       ),
     ),
     appBarTheme: AppBarTheme(
@@ -40,7 +40,7 @@ class AppTheme {
       titleMedium: TextStyle(
         fontSize: 18,
         fontWeight: FontWeight.w600,
-        color: Colors.teal.shade200, // ✅ safer & cleaner
+        color: Colors.teal.shade200,
       ),
     ),
     appBarTheme: AppBarTheme(

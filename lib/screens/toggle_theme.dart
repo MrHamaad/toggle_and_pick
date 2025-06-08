@@ -40,9 +40,6 @@ class _ToggleThemeState extends State<ToggleTheme> {
                 ),
               ),
             ),
-
-            // Footer fixed at bottom
-
           ],
         ),
       ),

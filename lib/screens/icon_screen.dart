@@ -60,7 +60,6 @@ class _IconScreenState extends State<IconScreen> {
                       color: Theme.of(context).colorScheme.primary,
                     ),
                     const SizedBox(height: 40),
-
                   ],
                 ),
               ),

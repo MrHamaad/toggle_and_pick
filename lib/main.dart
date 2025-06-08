@@ -28,7 +28,7 @@ class _MyAppState extends State<MyApp> {
   }
   @override
   Widget build(BuildContext context) {
-    // final textTheme = Theme.of(context).textTheme;
+
     final List<Widget> _widgetOptions = <Widget>[
       const HomeScreen(),
       IconScreen(),
@@ -63,7 +63,7 @@ class _MyAppState extends State<MyApp> {
              currentIndex: _selectedIndex,
              selectedItemColor: Colors.amber[800],
              onTap: _onItemTapped,
-      ), // HomeScreen is recognized now
+      ), //
     ));
   }
 }
