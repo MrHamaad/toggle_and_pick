@@ -29,7 +29,7 @@ class _HomeScaffoldState extends State<HomeScaffold> {
 
   List<Widget> get _widgetOptions => [
     const HomeScreen(),
-    IconScreen(),
+    const IconScreen(),
     ToggleTheme(_toggleTheme),
   ];
 
