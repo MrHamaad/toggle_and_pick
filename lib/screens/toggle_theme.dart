@@ -13,7 +13,7 @@ class _ToggleThemeState extends State<ToggleTheme> {
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    final textTheme = Theme.of(context).textTheme;
+
     return SafeArea(
       child: Padding(
         padding: const EdgeInsets.all(24.0),
@@ -29,7 +29,7 @@ class _ToggleThemeState extends State<ToggleTheme> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Text('Dark Mode', style: textTheme.titleMedium),
+                        Text('Dark Mode : ', style: TextStyle(fontSize: 25,fontWeight: FontWeight.w800)),
                         Switch(
                           value: isDark,
                           onChanged: widget.onThemeChanged,

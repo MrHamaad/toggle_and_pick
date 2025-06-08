@@ -1,51 +1,36 @@
 import 'package:flutter/material.dart';
 
 class AppTheme {
-  static final lightTheme = ThemeData(
-    colorScheme: ColorScheme.fromSeed(
-      seedColor: Colors.teal,
-      brightness: Brightness.light,
+  static final ThemeData lightTheme = ThemeData(
+    brightness: Brightness.light,
+    scaffoldBackgroundColor: const Color(0xFFF5F5F5), // Soft light gray
+    appBarTheme: const AppBarTheme(
+      backgroundColor: Colors.white,
+      foregroundColor: Colors.black,
+      elevation: 1,
     ),
-    useMaterial3: true,
-    textTheme: TextTheme(
-      headlineLarge: TextStyle(
-        fontSize: 32,
-        fontWeight: FontWeight.bold,
-        color: Colors.black,
-      ),
-      titleMedium: TextStyle(
-        fontSize: 18,
-        fontWeight: FontWeight.w600,
-        color: Colors.teal.shade800, //
-      ),
+    colorScheme: ColorScheme.light(
+      primary: Colors.amber,
+      secondary: Colors.amberAccent,
     ),
-    appBarTheme: AppBarTheme(
-      backgroundColor: Colors.teal.shade50,
-      elevation: 0,
+    textTheme: const TextTheme(
+      bodyMedium: TextStyle(color: Colors.black87),
     ),
   );
 
-  static final darkTheme = ThemeData(
-    colorScheme: ColorScheme.fromSeed(
-      seedColor: Colors.teal,
-      brightness: Brightness.dark,
+  static final ThemeData darkTheme = ThemeData(
+    brightness: Brightness.dark,
+    scaffoldBackgroundColor: const Color(0xFF121212),
+    appBarTheme: const AppBarTheme(
+      backgroundColor: Color(0xFF1E1E1E),
+      foregroundColor: Colors.white,
     ),
-    useMaterial3: true,
-    textTheme: TextTheme(
-      headlineLarge: TextStyle(
-        fontSize: 32,
-        fontWeight: FontWeight.bold,
-        color: Colors.white,
-      ),
-      titleMedium: TextStyle(
-        fontSize: 18,
-        fontWeight: FontWeight.w600,
-        color: Colors.teal.shade200,
-      ),
+    colorScheme: ColorScheme.dark(
+      primary: Colors.amber,
+      secondary: Colors.amberAccent,
     ),
-    appBarTheme: AppBarTheme(
-      backgroundColor: Colors.grey.shade900,
-      elevation: 0,
+    textTheme: const TextTheme(
+      bodyMedium: TextStyle(color: Colors.white),
     ),
   );
 }
